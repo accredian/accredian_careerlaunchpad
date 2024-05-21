@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "circular";
+  src: url(./assets/fonts/circular/CircularXXWeb-Book.woff2);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home {
+  background-color: rgb(207, 203, 203);
+}
+
+.thank-you {
+  background-image: url(https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/thank-you-page-background.webp);
+}
