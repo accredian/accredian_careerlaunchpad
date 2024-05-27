@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const HOST = import.meta.env.VITE_SERVER_URL || "http://localhost:5001";
+const HOST = import.meta.env.VITE_SERVER_URL;
+
+// || "http://localhost:5001"
 
 // "https://accredian-backend-v1-image-7dra35jwyq-uc.a.run.app";
 
