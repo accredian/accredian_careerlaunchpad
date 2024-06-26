@@ -4,10 +4,9 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { IoWarning } from "react-icons/io5"
 import { careerLaunchpad, checkUser } from "../services/career.service";
-import Swal from "sweetalert2"
 import { useNavigate } from "react-router-dom";
 import Loader from "../compoenents/loader";
-
+import { handleError } from "../helpers/error.helper"
 
 
 const Home = () => {
@@ -49,17 +48,10 @@ const Home = () => {
     },
     onError: (error) => {
       console.log(error);
-      Swal.fire({
-        title: "Oops!",
-        text: "some error Occurred!",
-        icon: "error",
-        confirmButtonText: "Ok",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          reset("")
-        }
-      });
-    }
+      setHeadShotFileName("")
+      setResumeFileName("")
+      handleError(error, "warning", () => reset(""));
+    },
   })
 
   const watchResumeFile = watch('resume');
@@ -107,16 +99,7 @@ const Home = () => {
     },
     onError: (error) => {
       console.log(error);
-      Swal.fire({
-        title: "Oops!",
-        text: "It appears the email you provided is not linked to any existing accounts. Please review the email address or register if you're a new user.",
-        icon: "error",
-        confirmButtonText: "Ok",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          reset("")
-        }
-      });
+      handleError(error, "warning", () => reset(""));
     }
   })
 
