@@ -25,7 +25,7 @@ const ThankYou = () => {
           </div>
         </div>
         <div>
-          <h2 className="mt-4 text-white">©2023 Accredian | <a className="hover:underline" href="http://accredian.com">accredian.com</a> </h2>
+          <h2 className="mt-4 text-white">©2024 Accredian | <a className="hover:underline" href="http://accredian.com">accredian.com</a> </h2>
         </div>
       </div>
     </div>
